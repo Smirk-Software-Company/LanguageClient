@@ -238,7 +238,7 @@ extension RestartingServer: StatefulServer {
 			return
 		}
 
-		self.state = .notStarted
+        self.state = .restartNeeded
 	}
 
 	public nonisolated var eventSequence: EventSequence {
