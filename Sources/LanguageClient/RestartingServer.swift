@@ -229,7 +229,7 @@ extension RestartingServer: StatefulServer {
 		self.state = .stopped(date)
 
 		// this sleep is here just to throttle rate of restarting
-		try? await Task.sleep(nanoseconds: 5 * NSEC_PER_SEC)
+        try? await Task.sleep(nanoseconds: 1 * NSEC_PER_SEC)
 
 		guard case .stopped = self.state else {
 #if canImport(OSLog)
